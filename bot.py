@@ -6,12 +6,12 @@ import html
 
 intents = discord.Intents.default()
 intents.message_content = True
-intents.members = True # 需要获取成员信息
+intents.members = True 
 bot = commands.Bot(command_prefix="!", intents=intents)
 token=""
 # ================= 配置区 =================
 TICKET_CATEGORY_ID =   # 你的工单分类 ID
-SUPPORT_ROLE_IDS = []  # 客服身份组 ID
+SUPPORT_ROLE_IDS = []  # 身份组 ID
 LOG_CHANNEL_ID =     # 存放聊天记录的日志频道 ID
 # ==========================================
 def generate_transcript(channel, messages):
@@ -108,7 +108,7 @@ class TicketView(discord.ui.View):
         await interaction.response.send_message(f"✅ Ticket created：{channel.mention}", ephemeral=True)
         
         embed = discord.Embed(
-            title="🎫 Diplomatic ticket",
+            title="🎫 Tickets",
             description=f"Hello {user.mention}.\n\nClick the button below to close the ticket",
             color=0x57F287
         )
